@@ -6,7 +6,7 @@
 #    By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/17 18:06:09 by kalmheir          #+#    #+#              #
-#    Updated: 2022/06/18 16:06:12 by kalmheir         ###   ########.fr        #
+#    Updated: 2022/06/18 16:07:01 by kalmheir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,5 +54,7 @@ clean:
 fclean: clean
 	${RM} ${SRVN}
 	${RM} ${CLIN}
+	${RM} ${BSRN}
+	${RM} ${BCLN}
 
 re: fclean all
