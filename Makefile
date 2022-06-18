@@ -6,7 +6,7 @@
 #    By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/17 18:06:09 by kalmheir          #+#    #+#              #
-#    Updated: 2022/06/18 16:02:05 by kalmheir         ###   ########.fr        #
+#    Updated: 2022/06/18 16:06:12 by kalmheir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,9 @@ LBFT =		libft.a
 MKLB =		make -C lib
 MOVE =		mv lib/
 
-all: mandatory bonus
-
 mandatory: client server
+
+all: mandatory bonus
 
 bonus: client_b server_b
 
