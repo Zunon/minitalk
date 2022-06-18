@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 09:54:56 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/18 16:03:23 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/18 16:21:20 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,29 +70,39 @@ unsigned char	get_byte(void)
 	return (result);
 }
 
-int	main(void)
+void	construct(void)
 {
-	int		i;
-	pid_t	clientpid;
-
-	clientpid = 0;
 	g_sigq.queue = ft_calloc(QUEUE_SIZE, sizeof(int));
 	g_sigq.size = 0;
 	g_sigq.front = -1;
 	g_sigq.rear = -1;
-	ft_printf("\n\033[34;1;4mServer PID\033[0m: %d\n", getpid());
 	signal(SIGUSR1, &enqueue);
 	signal(SIGUSR2, &enqueue);
-	while (1)
+}
+
+int	main(int argc, char **argv)
+{
+	int		i;
+	pid_t	clientpid;
+
+	if (argc != 1)
+		ft_putendl_fd("ERROR: INCORRECT NUMBER OF ARGUMENTS", STDERR_FILENO);
+	else
 	{
-		i = -1;
-		while (++i < 8)
-			pause();
-		while ((g_sigq.size && !(g_sigq.size % 8)) || g_sigq.size > 8)
+		clientpid = 0;
+		construct();
+		ft_printf("\n\033[34;1;4mServer PID\033[0m: %d\n", getpid());
+		while (1)
 		{
-			if (!clientpid)
-				get_client(&clientpid, &i);
-			print_char(&clientpid);
+			i = -1;
+			while (++i < 8)
+				pause();
+			while ((g_sigq.size && !(g_sigq.size % 8)) || g_sigq.size > 8)
+			{
+				if (!clientpid)
+					get_client(&clientpid, &i);
+				print_char(&clientpid);
+			}
 		}
 	}
 	return (0);
