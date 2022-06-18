@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 09:54:56 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/18 16:18:22 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/18 16:24:38 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int	main(int argc, char **argv)
 	int		i;
 	pid_t	clientpid;
 
+	(void)argv;
 	if (argc != 1)
 		ft_putendl_fd("ERROR: INCORRECT NUMBER OF ARGUMENTS", STDERR_FILENO);
 	else
