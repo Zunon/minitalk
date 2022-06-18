@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 09:53:28 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/18 13:00:56 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/18 15:26:24 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,10 @@ typedef struct s_queue
 	int		rear;
 	int		*queue;
 }				t_sigqueue;
+
+void			enqueue(int sig);
+int				dequeue(void);
+void			print_char(pid_t *clientpid);
+void			get_client(pid_t *clientpid, int *i);
+unsigned char	get_byte(void);
 #endif

@@ -6,13 +6,13 @@
 #    By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/17 18:06:09 by kalmheir          #+#    #+#              #
-#    Updated: 2022/06/18 12:57:24 by kalmheir         ###   ########.fr        #
+#    Updated: 2022/06/18 15:25:56 by kalmheir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =		minitalk
 SRVN =		server
-SRVS =		src/server/main.c
+SRVS =		src/server/main.c src/server/utils.c
 CLIN =		client
 CLIS =		src/client/main.c
 CC =		gcc
